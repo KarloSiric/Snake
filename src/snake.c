@@ -2,7 +2,7 @@
 * @Author: karlosiric
 * @Date:   2025-09-16 21:36:13
 * @Last Modified by:   karlosiric
-* @Last Modified time: 2025-09-16 22:20:15
+* @Last Modified time: 2025-09-16 22:52:54
 */
 
 
@@ -35,8 +35,10 @@ int main( int argc, char const *argv[] )
         printf( "SDL Could not initialize! SDL Error: %s\n", SDL_GetError() );
 
     }
-
     
+    
+
+
 
 
 
