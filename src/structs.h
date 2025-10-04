@@ -20,7 +20,7 @@ typedef struct {
     
 } t_App;
 
-
+extern t_App app;
 
 
 

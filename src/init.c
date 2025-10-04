@@ -4,7 +4,7 @@
  *  Author: karlosiric <email@example.com>
  *  Created: 2025-10-03 14:49:22
  *  Last Modified by: karlosiric
- *  Last Modified: 2025-10-04 15:34:00
+ *  Last Modified: 2025-10-05 00:25:23
  *----------------------------------------------------------------------
  *  Description:
  *      
@@ -19,15 +19,17 @@
 #include "game_config/config.h"
 #include "structs.h"
 #include "init.h"
+#include <SDL2/SDL.h>
 #include <SDL2/SDL_error.h>
 #include <SDL2/SDL_hints.h>
 #include <SDL2/SDL_render.h>
 #include <SDL2/SDL_video.h>
 #include <stdlib.h>
 
+t_App app = {0};
+
 void initSDL(void) 
 {
-    t_App app;
 
     int rendererFlags, windowFlags;
 
@@ -53,4 +55,12 @@ void initSDL(void)
         printf("Failed to create renderer: %s\n", SDL_GetError());
         exit(EXIT_SUCCESS);
     }
+}
+
+
+void cleanup(void) {
+
+    if (app.renderer) SDL_DestroyRenderer(app.renderer);
+    if (app.window) SDL_DestroyWindow(app.window);
+    SDL_Quit();
 }
