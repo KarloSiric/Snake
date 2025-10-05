@@ -26,8 +26,7 @@ int main( int argc, char const *argv[] )
 
     initSDL();
     atexit(cleanup);     
-
-
+    
     while(1) {
 
         prepareScene();
